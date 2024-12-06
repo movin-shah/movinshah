@@ -1,0 +1,80 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+body {
+  background-color: #000000;
+  cursor: default;
+  overflow-x: hidden;
+}
+
+/* Custom Cursor */
+.custom-cursor {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #00A3FF;
+  border-radius: 50%;
+  position: fixed;
+  pointer-events: none;
+  z-index: 9999;
+  transition: transform 0.2s ease;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(to bottom, #00A3FF, #8A2BE2);
+  border-radius: 4px;
+}
+
+/* Horizontal Scrollbar for Video Gallery */
+.overflow-x-auto::-webkit-scrollbar {
+  height: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+  background: linear-gradient(to right, #00A3FF, #8A2BE2);
+  border-radius: 2px;
+}
+
+/* Mobile Optimizations */
+@media (max-width: 768px) {
+  .overflow-x-auto {
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+  }
+  
+  .overflow-x-auto > div {
+    scroll-snap-align: start;
+  }
+}
+
+/* Animations */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
